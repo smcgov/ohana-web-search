@@ -157,7 +157,7 @@ feature "results page search", :js=>true do
 
   scenario 'when clicking the reset button', :vcr do
     expect(page).to have_content("No results")
-    all(".reset-btn").first.click
+    find(".reset-btn").click
 
     # check filter settings
     expect(find_field("keyword").value).to eq ""
