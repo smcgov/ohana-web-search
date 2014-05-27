@@ -3,8 +3,7 @@ module Features
 
     # search helpers
     def search(options = {})
-      keyword = options[:keyword]
-      fill_in('keyword', :with => keyword)
+      fill_in 'keyword', :with => options[:keyword]
 
       if options[:location].present?
         set_location_filter(options)
@@ -20,8 +19,14 @@ module Features
       find('#find-btn').click
     end
 
+    # Perform a search that returns 1 result
     def search_for_maceo
-      visit('/organizations?utf8=✓&keyword=maceo')
+      visit('/organizations?keyword=maceo')
+    end
+
+    # Perform a search that returns no results
+    def search_for_no_results
+      visit('/organizations?keyword=asdfdsggfdg')
     end
 
 
@@ -38,21 +43,20 @@ module Features
       set_filter("kind",options[:kind])
     end
 
-    # @param options [Object] the URL parameters object
-    # @param name [String] the CSS name of the field
-    # @oaram field [Symbol] the field to look up in the options object.
+    # @param name [String] the CSS name of the field.
+    # @oaram field [String] the value to select in the filter.
+    # @param custom [Boolean] is the value a custom value not in the list?
     def set_filter(name,field,custom=true)
-      within(".require-loaded") do
-        within("##{name}-options") do
-          find(".closed").click
-          if field.present? && custom == true
-            find(".add .toggle").trigger('mousedown')
-            fill_in("#{name}-option-input", :with => field)
-          elsif custom == false
-            find(".toggle-group",:text=>field).trigger('mousedown')
-          else
-            first("label").click
-          end
+      find(".require-loaded")
+      within("##{name}-options") do
+        find(".closed").click
+        if field.present? && custom == true
+          find(".add .toggle").trigger('mousedown')
+          fill_in("#{name}-option-input", :with => field)
+        elsif custom == false
+          find(".toggle-group",:text=>field).trigger('mousedown')
+        else
+          first("label").click
         end
       end
     end
@@ -66,10 +70,10 @@ module Features
       within("##{name}-options") do
         # test clicking legend functionality
         expect(all(".current-option label").last).to have_content(val)
-        find(".closed").trigger("mousedown")
+        find(".closed").click
         expect(page).to have_selector(".open")
         expect(find(".available-options")).to have_css(".toggle-group", :count=>count)
-        find(".open").trigger("mousedown")
+        find(".open").click
         expect(all(".current-option label").last).to have_content(val)
       end
     end
@@ -140,7 +144,6 @@ module Features
     def looks_like_no_results
       expect(page).to have_selector(".no-results")
       expect(page).to have_content("your search returned no results.")
-      expect(page).to have_selector("#search-summary")
       expect(page).not_to have_selector('#map-canvas')
     end
 
