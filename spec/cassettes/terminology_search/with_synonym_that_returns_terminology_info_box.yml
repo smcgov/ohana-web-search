@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://smc-ohana-api-test.herokuapp.com/api/search?action=index&controller=organizations&keyword=Women,%20Infants,%20and%20Children&kind=Human%20Services&service_area=smc&utf8=%E2%9C%93
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.ohanapi-v1+json
+      User-Agent:
+      - Ohanakapa Ruby Gem 1.0.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json
+      Date:
+      - Sat, 31 May 2014 12:14:54 GMT
+      Server:
+      - nginx/1.4.7 + Phusion Passenger 4.0.40
+      Status:
+      - 200 OK
+      X-Current-Page:
+      - '1'
+      X-Powered-By:
+      - Phusion Passenger 4.0.40
+      X-Request-Id:
+      - 7200a38a-0a72-43ff-967b-946ef06297cd
+      X-Runtime:
+      - '0.377842'
+      X-Total-Count:
+      - '3'
+      X-Total-Pages:
+      - '1'
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"id":1472,"accessibility":["Ramp","Disabled Restroom","Disabled Parking","Wheelchair"],"address":{"id":1212,"street":"380
+        - 90th Street","city":"Daly City","state":"CA","zip":"94015"},"ask_for":["Receptionist"],"contacts":[{"id":1728,"name":"Cathy
+        Lehmkuhl","title":"Clinic Manager"},{"id":1729,"name":"Jonathan Lee, Dr.","title":"Medical
+        Director"}],"coordinates":[-122.4740805,37.6911172],"description":"Offers
+        general family medical services for San Mateo County residents including non-emergency
+        urgent care. Located in the Mike Nevin Health Center Building at 380 - 90th
+        Street, Daly City. Services include well baby clinic, immunization, HIV testing
+        and counseling, AIDS clinic, adult primary care, senior care services, tuberculosis
+        clinic, and nutrition and family planning services. Podiatry clinic is also
+        provided. Women, Infants and Children Program (WIC) and mental health services
+        are also located at this site. Dental services, including both prevention
+        and treatment, are available for children age 18 or under Monday through Friday,
+        8:30 to 5. Adult dental care is provided on an emergency basis only.  Formerly
+        known as the North County Community Health Center.","faxes":[{"id":940,"number":"650
+        301-8626"}],"kind":"Human Services","languages":["Hindi","Spanish","Filipino
+        (Tagalog)"],"mail_address":{"id":1469,"attention":"Daly City Clinic","street":"380
+        - 90th Street","city":"Daly City","state":"CA","zip":"94015"},"name":"San
+        Mateo Medical Center., Daly City Clinic","phones":[{"id":2050,"number":"650
+        301-8600"}],"short_desc":"Outpatient clinic offering general family medical
+        services in the northern part of the county.","slug":"san-mateo-medical-center-daly-city-clinic","slugs":["san-mateo-medical-center-daly-city-clinic"],"transportation":"SAMTRANS
+        stops in front.","updated_at":"2014-05-24T14:08:25.718-07:00","url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1472","services":[{"id":1472,"audience":"Residents
+        of northern San Mateo County","eligibility":"San Mateo County resident","fees":"Vary
+        according to income. Cash, Healthy Family, Healthy Kids, Medi-Cal, Medicare,
+        private insurance, WELL Program accepted.","funding_sources":["County","State"],"keywords":["HEALTH
+        SERVICES","Dental","Outpatient Care","HIV Testing","Community Clinics","Dental
+        Care","Youth","Family Medicine","Infant Care","Immunizartions","Asthma"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":86,"depth":1,"oe_id":"106-02","name":"Dental
+        Care","parent_id":78,"slug":"dental-care"},{"id":92,"depth":1,"oe_id":"106-04","name":"Health
+        Education","parent_id":78,"slug":"health-education"},{"id":94,"depth":2,"oe_id":"106-04-02","name":"Disease
+        Management","parent_id":92,"slug":"disease-management"}],"how_to_apply":"Apply
+        by phone for appointment.","service_areas":["San Mateo County"],"wait":"Varies.
+        Same day service if appropriate.","updated_at":"2014-05-24T14:07:53.415-07:00"}],"organization":{"id":1309,"name":"San
+        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}},{"id":1455,"accessibility":["Elevator","Wheelchair"],"address":{"id":1195,"street":"477
+        9th Avenue, Suite 110","city":"San Mateo","state":"CA","zip":"94402"},"ask_for":["Call
+        the main office"],"contacts":[{"id":1702,"name":"Eliana C. Schultz, RD","title":"WIC
+        Director"}],"coordinates":[-122.3171637,37.5624546],"description":"Offers
+        nutrition education and supplemental foods to women who are pregnant, post-partum
+        or breastfeeding, and children age 5 or under. Families may be low- or medium-income
+        and working families may also qualify. There are six WIC clinic sites in the
+        county (South San Francisco, East Palo Alto, Redwood City, Daly City, San
+        Mateo and Half Moon Bay). Supplemental food is made available through issuance
+        of coupons redeemable at most grocery stores for certain food items selected
+        to provide essential nutrients. Participation does not affect eligibility
+        for food stamps or other public assistance programs. Also assists in finding
+        health care and other community services. Formerly known as San Mateo County
+        Health Department, Public Health Division. Nutrition Programs. Women, Infants
+        and Children (WIC) Program.","hours":"Monday-Thursday, 8:30-12, 12:30-5:30
+        (San Mateo site)","kind":"Human Services","languages":["Spanish"],"mail_address":{"id":1452,"attention":"SMCHS
+        WIC Program","street":"2000 Alameda de las Pulgas, Suite 200","city":"San
+        Mateo","state":"CA","zip":"94403"},"name":"Family Health Services., Public
+        Health Nutrition., Women, Infants and Children (WIC) Program","phones":[{"id":2012,"number":"650
+        573-2168"},{"id":2013,"department":"Breastfeeding Helpline","number":"800
+        205-0333"}],"short_desc":"Offers nutrition education and supplemental foods
+        to low-income women who are pregnant, post-partum or breastfeeding.","slug":"family-health-services-public-health-nutrition-women-infants-and-children-wic-program","slugs":["family-health-services-public-health-nutrition-women-infants-and-children-wic-program"],"transportation":"SAMTRANS
+        stops within 1 block.","updated_at":"2014-05-24T14:08:24.716-07:00","urls":["http://www.smchealth.org/wic"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1455","services":[{"id":1455,"audience":"Pregnant
+        women, new mothers and children age 5 or under","eligibility":"Woman who is
+        pregnant, post-partum (within the first 6 months) or breastfeeding, child
+        age 5 or under who is at nutritional risk","fees":"None.","funding_sources":["Federal"],"keywords":["Nutrition
+        Education","WIC","Youth","Infants/Toddlers","Women","Pediatrics","Pregnancy","Neonatal","Family
+        Planning"],"categories":[{"id":17,"depth":0,"oe_id":"102","name":"Food","parent_id":null,"slug":"food"},{"id":23,"depth":1,"oe_id":"102-06","name":"Help
+        Pay for Food","parent_id":17,"slug":"help-pay-for-food"},{"id":25,"depth":2,"oe_id":"102-06-02","name":"Food
+        Benefits","parent_id":23,"slug":"food-benefits"},{"id":26,"depth":1,"oe_id":"102-07","name":"Nutrition","parent_id":17,"slug":"nutrition"},{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":120,"depth":2,"oe_id":"106-06-05","name":"Maternity
+        Care","parent_id":109,"slug":"maternity-care"},{"id":196,"depth":0,"oe_id":"108","name":"Care","parent_id":null,"slug":"care"}],"how_to_apply":"Apply
+        by phone. Appointment necessary for application.","service_areas":["San Mateo
+        County"],"wait":"2 week wait for new enrollees.","updated_at":"2014-05-24T14:07:52.947-07:00"}],"organization":{"id":1309,"name":"San
+        Mateo County Health System","slug":"san-mateo-county-health-system","slugs":["san-mateo-county-health-system"],"_slugs":["san-mateo-county-health-system"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1309/locations"}},{"id":1621,"accessibility":["Elevator","Disabled
+        Restroom","Disabled Parking","Wheelchair"],"address":{"id":1354,"street":"725
+        Welch Road","city":"Palo Alto","state":"CA","zip":"94304"},"ask_for":["Call
+        toll-free number for information"],"contacts":[{"id":1915,"name":"Christopher
+        Dawes","title":"Chief Executive Officer"}],"coordinates":[-122.175049,37.436357],"description":"Operates
+        the comprehensive 264-bed Lucile Packard Children''s Hospital at Stanford
+        providing pediatric medical and surgical services. The hospital provides cardiology
+        and heart transplantation services, hematology/oncology/bone marrow transplantation,
+        liver and kidney transplantation, general pediatric surgery and neonatology.
+        Outpatient clinics include primary care, adolescent medicine, bone marrow
+        transplant, cardiology, community pediatric after-hours, dermatology, diabetes,
+        eating disorders, endocrinology, gastroenterology, genetics, hematology, hemophilia,
+        infant development, infectious disease, liver transplant, neurology, oncology,
+        ophthalmology, orthopedics, plastic surgery, psychiatry, respiratory medicine,
+        rheumatology, spina bifida, surgery, and urology. The Mommy Van is a special
+        mobile medical unit providing women''s health care in East Palo Alto. Medical
+        services are free of charge and available to women who do not have any type
+        of medical insurance. Provides prenatal services, pregnancy testing, breast
+        exams and referral for mammograms, pap smears, contraception, checking for
+        diabetes and high blood pressure, and pre- and post-natal information. The
+        Mommy Van is also located at two Samaritan House locations: 401 North Humboldt
+        Street, San Mateo (Mondays, 9-3) and 114 5th Avenue, Redwood City (Wednesdays,
+        9-3). Call 650-839-1447. Other services include social services, interpreters,
+        chaplaincy, recreation therapy, physical and occupational therapy, nutrition,
+        pharmacy, radiology, laboratory, rehabilitation engineering and community
+        outreach services. The Parent Information and Referral Center (PIRC) provides
+        information on child healthcare. Pediatric nurses are available to answer
+        questions about a variety of children''s health, growth and development, safety
+        and behavior issues. They can also help choose a physician who meets the special
+        needs of the child as well as provide information about resources for children
+        in a community. Translation services are available through the AT\u0026T Language
+        Line. Call 650-498-KIDS or 800-690-2282. The Teen Health Resource Line offers
+        reliable, accessible and confidential health recommendations. Adolescents
+        with questions about relationships, HIV/AIDS, eating disorders or other health
+        issues are invited to call 888-711-TEEN. The Adolescent Health Van offers
+        comprehensive health services for uninsured and homeless youth, 12 to 21 years
+        of age. Physicians, nurse practitioners, social workers, nutritionists and
+        nurses from Lucile Packard Children''s Hospital staff the Health Van. Services
+        include immunizations, physicals, pregnancy tests, pelvic exams, sick care,
+        HIV counseling and testing, family planning and health education. All services
+        and medications are provided at no charge to the patients. Visits are on a
+        first-come, first-serve basis. The location of the Health Van may change without
+        advance notice. The locations are 2801 Mission Street in San Francisco (1st
+        Tuesday of each month, from 2-7), the Tenderloin Playground at 570 Ellis Street
+        in San Francisco (2nd Tuesday of each month, from 2-7), Peninsula High School
+        at 300 Piedmont Avenue in San Bruno (3rd Tuesday of each month, from 9-2),
+        Phoenix High School at 1950 Mission Street in San Francisco (4th Tuesday of
+        each month, from 9-2) and Alta Vista High School at Bryant Street and Turman
+        in Mountain View (1st Thursday of each month, from 9-2). Call 888-711-TEEN
+        (8336).","emails":["referral@medcenter.stanford.edu"],"kind":"Human Services","languages":["Interpreter"],"mail_address":{"id":1618,"attention":"Packard
+        Children''s Hospital","street":"725 Welch Road","city":"Palo Alto","state":"CA","zip":"94304"},"name":"Lucile
+        Packard Children''s Hospital","phones":[{"id":2328,"department":"24 hours
+        daily","number":"800 756-9000"},{"id":2329,"number":"650-497-8000"},{"id":2330,"number":"800
+        756-9000"},{"id":2331,"number":"650 497-8000"},{"id":2332,"department":"Advice
+        Nurse","number":"650 497-8820"},{"id":2333,"department":"Referral Center","number":"800
+        756-9000"},{"id":2334,"number":"650-326-4976","number_type":"TTY"}],"short_desc":"Operates
+        a 214-bed inpatient hospital for children.","slug":"lucile-packard-children-s-hospital","slugs":["lucile-packard-children-s-hospital"],"transportation":"SAMTRANS
+        and CALTRAIN stop within 1/2 mile and connect with Stanford University''s
+        Marguerite shuttle service.","updated_at":"2014-05-24T14:08:05.526-07:00","urls":["http://www.lpch.org"],"url":"http://smc-ohana-api-test.herokuapp.com/api/locations/1621","services":[{"id":1621,"audience":"Children,
+        youth, pregnant women","eligibility":"Child or youth in need of the hospital''s
+        services","fees":"Vary according to service. Cash, Medi-Cal, military insurance,
+        private insurance accepted.","funding_sources":["Donations","Fees","Grants"],"keywords":["FAMILY
+        PLANNING SERVICES","Contraceptive Assistance","Expectant/New Parent Assistance","Pregnancy
+        Testing","HEALTH SERVICES","Inpatient Care","Outpatient Care","MENTAL HEALTH
+        SERVICES","Day Treatment","Observation/Diagnosis","Hospitals"],"categories":[{"id":78,"depth":0,"oe_id":"106","name":"Health","parent_id":null,"slug":"health"},{"id":92,"depth":1,"oe_id":"106-04","name":"Health
+        Education","parent_id":78,"slug":"health-education"},{"id":95,"depth":2,"oe_id":"106-04-03","name":"Family
+        Planning","parent_id":92,"slug":"family-planning"},{"id":109,"depth":1,"oe_id":"106-06","name":"Medical
+        Care","parent_id":78,"slug":"medical-care"},{"id":113,"depth":2,"oe_id":"106-06-04","name":"Checkup
+        \u0026 Test","parent_id":109,"slug":"checkup-test"},{"id":118,"depth":3,"oe_id":"106-06-04-05","name":"Pregnancy
+        Tests","parent_id":113,"slug":"pregnancy-tests"},{"id":122,"depth":2,"oe_id":"106-06-07","name":"Prevent
+        \u0026 Treat","parent_id":109,"slug":"prevent-treat"},{"id":123,"depth":3,"oe_id":"106-06-07-01","name":"Counseling","parent_id":122,"slug":"counseling"},{"id":130,"depth":3,"oe_id":"106-06-07-08","name":"Vaccinations","parent_id":122,"slug":"vaccinations"}],"how_to_apply":"Apply
+        by phone.","service_areas":["Alameda County","Contra Costa County","Marin
+        County","San Francisco County","San Mateo County","Santa Clara County","Santa
+        Cruz County","Nationwide"],"wait":"No wait.","updated_at":"2014-05-24T14:07:58.362-07:00"}],"organization":{"id":1334,"name":"Stanford
+        University Medical Center","slug":"stanford-university-medical-center","slugs":["stanford-university-medical-center"],"_slugs":["stanford-university-medical-center"],"url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1334","locations_url":"http://smc-ohana-api-test.herokuapp.com/api/organizations/1334/locations"}}]'
+    http_version: 
+  recorded_at: Sat, 31 May 2014 12:14:54 GMT
+recorded_with: VCR 2.8.0

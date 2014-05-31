@@ -1,0 +1,84 @@
+# Show informational terminology definition boxes for certain keyword
+# searches. This can be helpful for such things as providing a definition
+# for the federal SNAP program when the user searches for "food stamps,"
+# for example.
+#
+# To create an entry follow this format:
+#
+# '<main-keyword>' :
+#   synonymns :
+#     - '<synonymn1>'
+#     - '<synonymn2>'
+#     - '<synonymn3 ... >'
+#   title: '<title for this term>'
+#   description :
+#     '<description of this term>'
+#   url : '<where to go for more info>'
+#
+# The <main-keyword> and all the entries under 'synonyms'
+# will be keywords the user can search for to display the
+# info box.
+#
+# The info (title, description, url) will be fed into the
+# partial at app/views/component/terminology/_template.html.haml
+#
+# You can override the template partial by providing your
+# own partial in the app/views/component/terminology/ directory.
+# Give it the name _<main-keyword>.html.haml, with underscores
+# in place of spaces in the name. Such as _market_match.html.haml,
+# or _wic.html.haml.
+#
+# NOTE: enter all keywords and synonyms in lowercase in this file
+# to avoid a keyword not being registered. When the user searches
+# their entered keyword case will not matter.
+
+'wic' :
+  synonymns :
+    - 'women, infants, and children'
+    - 'women, infants, & children'
+    - 'assistance for mothers'
+  title: Women, Infants, and Children
+  description :
+    Women, Infants, and Children (WIC)
+    provides assistance for low-income pregnant, breastfeeding, and
+    non-breastfeeding postpartum women, and to eligible infants and
+    children up to age 5..
+  url : http://www.fns.usda.gov/wic
+
+'sfmnp' :
+  synonymns :
+    - "senior farmers' market nutrition program"
+    - 'food vouchers for seniors'
+    - 'food vouchers'
+  title : "Senior Farmers' Market Nutrition Program"
+  description :
+    "Senior Farmers' Market Nutrition Program (SFMNP)
+    provides low-income seniors with coupons that can be exchanged for eligible
+    foods at farmers' markets, roadside stands, and community-supported
+    agriculture programs."
+  url : http://www.fns.usda.gov/sfmnp
+
+'calfresh' :
+  synonymns :
+    - 'food stamps'
+    - 'snap'
+  title : CalFresh
+  description :
+    Known federally as SNAP (Supplemental Nutrition Assistance Program),
+    CalFresh offers nutrition assistance to eligible, low income individuals
+    and families and provides economic benefits to communities.
+  url : http://www.calfresh.ca.gov
+
+'market match' :
+  synonymns : ''
+  title : Market Match
+  description :
+    "Market Match offers farmers’ market customers an extra $5 when they spend
+    at least $10 on their CalFresh EBT card at participating farmer's markets."
+  url : http://www.pcfma.com/pcfma_marketmatch.php
+
+'health care reform':
+  synonymns :
+    - 'aca'
+    - 'affordable care act'
+    - 'health insurance'
