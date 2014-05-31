@@ -25,38 +25,21 @@ module ApplicationHelper
     content_for(:canonical, tag(:link, :rel => :canonical, :href => url)) if url
   end
 
-  # Top level services and their children categories.
+  # General services and their children categories.
   # Displayed on the home page.
-  # @return [Array] Array of hashes with parent and children describing titles and list items.
+  # @return [Array] Array of category keywords.
   def service_terms
-    [
-      {
-        :parent => 'government assistance',
-        :children => ['CalFresh/Food Stamps','Health Insurance',
-          'WIC/Women, Infants, & Children',"SFMNP/Food vouchers for seniors",
-          'Medi-Cal','Medicare'].sort
-      },
-      {
-        :parent => "children, teens, & families",
-        :children => ['mentoring programs','discrimination','counseling',
-          'child care','abuse prevention','youth development'].sort
-      }
-    ]
+    terms = YAML.load(File.read(File.expand_path("#{Rails.root}/config/#{ Rails.env.test? ? 'test/' : '' }homepage_links.yml", __FILE__)))
+    terms['general']
   end
 
-  # Top level services and their children categories.
-  # Displayed on the home page.
-  # @return [Array] Array of hashes with parent and children describing titles and list items.
+  # Priority services and their children categories.
+  # Displayed on the home page in emphasized styling.
+  # @return [Array] Array of category keywords.
   def emergency_terms
-    [
-      { :parent => 'emergency',
-        :children => ['hotlines','emergency food','emergency shelter','Psychiatric emergency'].sort
-      },
-      { :parent => "reporting",
-        :children => ['domestic violence','child abuse'].sort
-      }
-    ]
-  end
+    terms = YAML.load(File.read(File.expand_path("#{Rails.root}/config/#{ Rails.env.test? ? 'test/' : '' }homepage_links.yml", __FILE__)))
+    terms['priority']
+ end
 
   # @return [Hash] Defines which query terms will display an info box
   # on the results page for select keywords.
