@@ -6,10 +6,10 @@
 # To create an entry follow this format:
 #
 # '<main-keyword>' :
-#   synonymns :
-#     - '<synonymn1>'
-#     - '<synonymn2>'
-#     - '<synonymn3 ... >'
+#   synonyms :
+#     - '<synonym1>'
+#     - '<synonym2>'
+#     - '<synonym3 ... >'
 #   title: '<title for this term>'
 #   description :
 #     '<description of this term>'
@@ -32,11 +32,11 @@
 # to avoid a keyword not being registered. When the user searches
 # their entered keyword case will not matter.
 
-'wic' :
-  synonymns :
-    - 'women, infants, and children'
-    - 'women, infants, & children'
-    - 'assistance for mothers'
+wic :
+  synonyms :
+    - women, infants, and children
+    - women, infants, & children
+    - assistance for mothers
   title: Women, Infants, and Children
   description :
     Women, Infants, and Children (WIC)
@@ -45,23 +45,24 @@
     children up to age 5..
   url : http://www.fns.usda.gov/wic
 
-'sfmnp' :
-  synonymns :
-    - "senior farmers' market nutrition program"
-    - 'food vouchers for seniors'
-    - 'food vouchers'
-  title : "Senior Farmers' Market Nutrition Program"
+sfmnp :
+  synonyms :
+    - senior farmers' market nutrition program
+    - senior farmers market nutrition program
+    - food vouchers for seniors
+    - food vouchers
+  title : Senior Farmers' Market Nutrition Program
   description :
-    "Senior Farmers' Market Nutrition Program (SFMNP)
+    Senior Farmers' Market Nutrition Program (SFMNP)
     provides low-income seniors with coupons that can be exchanged for eligible
     foods at farmers' markets, roadside stands, and community-supported
-    agriculture programs."
+    agriculture programs.
   url : http://www.fns.usda.gov/sfmnp
 
-'calfresh' :
-  synonymns :
-    - 'food stamps'
-    - 'snap'
+calfresh :
+  synonyms :
+    - food stamps
+    - snap
   title : CalFresh
   description :
     Known federally as SNAP (Supplemental Nutrition Assistance Program),
@@ -69,16 +70,16 @@
     and families and provides economic benefits to communities.
   url : http://www.calfresh.ca.gov
 
-'market match' :
-  synonymns : ''
+market match :
+  synonyms : ''
   title : Market Match
   description :
-    "Market Match offers farmers’ market customers an extra $5 when they spend
-    at least $10 on their CalFresh EBT card at participating farmer's markets."
+    Market Match offers farmers' market customers an extra $5 when they spend
+    at least $10 on their CalFresh EBT card at participating farmer's markets.
   url : http://www.pcfma.com/pcfma_marketmatch.php
 
-'health care reform':
-  synonymns :
-    - 'aca'
-    - 'affordable care act'
-    - 'health insurance'
+health care reform:
+  synonyms :
+    - aca
+    - affordable care act
+    - health insurance

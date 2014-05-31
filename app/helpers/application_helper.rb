@@ -61,22 +61,7 @@ module ApplicationHelper
   # @return [Hash] Defines which query terms will display an info box
   # on the results page for select keywords.
   def info_box_terms
-    {
-      'wic' =>
-        ['women, infants, and children','WIC/Women, Infants, & Children'],
-      'sfmnp' =>
-        ["senior farmers' market nutrition program",
-          "SFMNP/Food vouchers for seniors"],
-      'market match' => [],
-      'calfresh' => ['food stamps','snap','calfresh/food stamps'],
-      'health care reform' => ['affordable care act','health insurance']
-    }
-  end
-
-  # @return [Hash] Defines which query terms will display an info box
-  # on the results page for select keywords.
-  def info_box_terms
-    YAML.load(File.read(File.expand_path("#{Rails.root}/config/terminology.yml", __FILE__)))
+    YAML.load(File.read(File.expand_path("#{Rails.root}/config/#{ Rails.env.test? ? 'test/' : '' }terminology.yml", __FILE__)))
   end
 
   # @return [Hash] Returns a hash that should be fed into a `render` command
@@ -86,19 +71,19 @@ module ApplicationHelper
     if params[:keyword].present?
       keyword = params[:keyword].downcase
       # Create 2 arrays: one containing the search terms of the info_box_terms,
-      # and the other containing all the synonymns of those terms.
+      # and the other containing all the synonyms of those terms.
       main_terms = info_box_terms.keys
       synonyms = []
-      info_box_terms.select { |k,v| synonyms.push(v['synonymns']) }
+      info_box_terms.select { |k,v| synonyms.push(v['synonyms']) }
       synonyms.flatten!
 
-      # Check if the keyword matches any of the terms or synonymns.
+      # Check if the keyword matches any of the terms or synonyms.
       if (main_terms + synonyms).include?(keyword)
 
         # If the keyword matches a value, we find the corresponding key.
         # The key is what the partial name corresponds to.
         if synonyms.include?(keyword)
-          partial = info_box_terms.find { |k,v| v['synonymns'].include? keyword }.first
+          partial = info_box_terms.find { |k,v| v['synonyms'].include? keyword }.first
         # Otherwise, it means the keyword matches a key
         else
           partial = keyword
