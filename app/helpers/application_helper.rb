@@ -32,9 +32,9 @@ module ApplicationHelper
     [
       {
         :parent => 'government assistance',
-        :children => ['CalFresh/Food Stamps','Health Insurance',
-          'WIC/Women, Infants, & Children',"SFMNP/Food vouchers for seniors",
-          'Medi-Cal','Medicare'].sort
+        :children => ['calfresh/food stamps','health insurance',
+          'wic/women, infants, & children',"sfmnp/food vouchers for seniors",
+          'medi-cal','medicare'].sort
       },
       {
         :parent => "children, teens, & families",
@@ -50,7 +50,7 @@ module ApplicationHelper
   def emergency_terms
     [
       { :parent => 'emergency',
-        :children => ['hotlines','emergency food','emergency shelter','Psychiatric emergency'].sort
+        :children => ['hotlines','emergency food','emergency shelter','psychiatric emergency'].sort
       },
       { :parent => "reporting",
         :children => ['domestic violence','child abuse'].sort
@@ -61,43 +61,54 @@ module ApplicationHelper
   # @return [Hash] Defines which query terms will display an info box
   # on the results page for select keywords.
   def info_box_terms
-    {
-      'wic' =>
-        ['women, infants, and children','WIC/Women, Infants, & Children'],
-      'sfmnp' =>
-        ["senior farmers' market nutrition program",
-          "SFMNP/Food vouchers for seniors"],
-      'market match' => [],
-      'calfresh' => ['food stamps','snap','calfresh/food stamps'],
-      'health care reform' => ['affordable care act','health insurance']
-    }
+    YAML.load(File.read(File.expand_path("#{Rails.root}/config/#{ Rails.env.test? ? 'test/' : '' }terminology.yml", __FILE__)))
   end
 
-  # @return [String] Returns an underscored string that corresponds to the special
-  # info box partial.
+  # @return [Hash] Returns a hash that should be fed into a `render` command
+  # that will corresponds to the info box partial in /app/views/component/terminology,
+  # or nil if no search keyword is present.
   def dynamic_partial
-    # Create 2 arrays: one containing the keys of the
-    # info_box_terms hash, and the other containing all the values
-    # in the hash.
-    main_terms = info_box_terms.keys
-    synonyms = info_box_terms.values.flatten
+    if params[:keyword].present?
+      keyword = params[:keyword].downcase
+      # Create 2 arrays: one containing the search terms of the info_box_terms,
+      # and the other containing all the synonyms of those terms.
+      main_terms = info_box_terms.keys
+      synonyms = []
+      info_box_terms.select { |k,v| synonyms.push(v['synonyms']) }
+      synonyms.flatten!
 
-    keyword = params[:keyword].downcase if params[:keyword].present?
+      # Check if the keyword matches any of the terms or synonyms.
+      if (main_terms + synonyms).include?(keyword)
 
-    # Check if the keyword matches any of the hash keys or values
-    if (main_terms + synonyms).include?(keyword)
-      # If the keyword matches a value, we find the corresponding key.
-      # The key is what the partial corresponds to.
-      if synonyms.include?(keyword)
-        partial = info_box_terms.find { |_,v| v.include? keyword }.first
-      # Otherwise, it means the keyword matches a key
-      else
-        partial = keyword
+        # If the keyword matches a value, we find the corresponding key.
+        # The key is what the partial name corresponds to.
+        if synonyms.include?(keyword)
+          partial = info_box_terms.find { |k,v| v['synonyms'].include? keyword }.first
+        # Otherwise, it means the keyword matches a key
+        else
+          partial = keyword
+        end
+
+        # Grab the specific term details for filling a template partial.
+        term = info_box_terms[partial]
+
+        # Replace spaces in the key string with underscores to match
+        # the partial name (see app/views/components/terminology),
+        # and return the path to the partial for use in the view.
+        dynamic_partial = partial.tr(' ','_')
+
+        # Specify the path to the partial.
+        partial_path = 'component/terminology'
+
+        # If a partial with the specified name does not exist and the term
+        # contains a title, description, and link in the yaml file, use the
+        # template partial.
+        if !File.exist?("#{Rails.root.join('app','views',partial_path,'_'+dynamic_partial+'.html.haml')}")
+          dynamic_partial = 'template'
+        end
+
+        {:partial => "#{partial_path}/#{dynamic_partial}", :locals => {:term=>term}}
       end
-      # replace spaces in the key string with underscores to match
-      # the partial name (see app/views/components/terminology),
-      # and return the path to the partial for use in the view.
-      "component/terminology/#{partial.tr(' ','_')}"
     end
   end
 
