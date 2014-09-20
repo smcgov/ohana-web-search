@@ -4,14 +4,14 @@
     %h1
       Want to get in touch?
     %p
-      Submit comments to the development team:
+      = link_to 'File an issue on Github', 'https://github.com/smcgov/SMC-Connect/issues', target: '_blank'
 
     #feedback-form
       %p#feedback-status.hide
         Submit feedback!
       %p
         %label{ for: 'comment' }
-          Comment:
+          Submit comments to the development team:
         %textarea{ name: 'comment', id: 'comment', placeholder: 'enter your comment, question, etc.', rows: '4', required: ''}
       %p
         %label{ for: 'email' }
