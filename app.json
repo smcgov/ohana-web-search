@@ -21,17 +21,55 @@
     "GOOGLE_ANALYTICS_ID": {
       "required": true
     },
+    "GOOGLE_MAPS_API_KEY": {
+      "required": true
+    },
+    "GOOGLE_TRANSLATE_API_TOKEN": {
+      "required": true
+    },
+    "GOOGLE_TRANSLATE_CUSTOMIZATION_CODE": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
     "LATEST_COMMIT_HASH": {
       "required": true
     },
     "OHANA_API_ENDPOINT": {
       "required": true
     },
+    "OHANA_API_TOKEN": {
+      "required": false
+    },
     "READTHIS_DRIVER": {
+      "required": true
+    },
+    "RECAPTCHA_SECRET_KEY": {
+      "required": true
+    },
+    "RECAPTCHA_SITE_KEY": {
       "required": true
     },
     "REDISCLOUD_URL": {
       "required": true
+    },
+    "PATH": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true,
+      "value": "true"
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true,
+      "value": "true"
     },
     "SECRET_TOKEN": {
       "required": true

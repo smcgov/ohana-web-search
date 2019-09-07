@@ -45,10 +45,11 @@ group :test do
   gem 'haml_lint'
   gem 'rails-controller-testing'
   gem 'rubocop'
+  gem 'rubocop-rails'
   gem 'simplecov', require: false
   gem 'vcr'
   gem 'webdrivers'
-  gem 'webmock', '~> 3.4'
+  gem 'webmock'
 end
 
 group :development, :test do

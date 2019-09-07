@@ -88,6 +88,7 @@ function _loadMarker(markerData, atMaxSize, spiderfier) {
                                         markerData.longitude);
 
   var markerProxy = markers.create(markerData.kind);
+
   if (atMaxSize)
     markerProxy.turnOn(markerProxy.LARGE_ICON);
   else

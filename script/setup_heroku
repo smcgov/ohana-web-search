@@ -30,6 +30,12 @@ fi
 echo "Getting ready to set environment variables for $APP_NAME"
 figaro heroku:set -e production
 
+echo "Setting RAILS_LOG_TO_STDOUT to true"
+heroku config:set RAILS_LOG_TO_STDOUT=true --app $APP_NAME
+
+echo "Setting RAILS_SERVE_STATIC_FILES to true"
+heroku config:set RAILS_SERVE_STATIC_FILES=true --app $APP_NAME
+
 echo "Setting SECRET_TOKEN"
 token=$(python -c 'import uuid; print uuid.uuid4()')
 heroku config:set SECRET_TOKEN=$token --app $APP_NAME
@@ -41,6 +47,9 @@ heroku addons:create sendgrid:starter --app $APP_NAME
 
 echo "Installing Memcachier"
 heroku addons:create memcachier --app $APP_NAME
+
+echo "Adding NodeJS buildback for compatibility with webpacker"
+heroku buildpacks:add heroku/nodejs -i 1 --app $APP_NAME
 
 echo "All done setting up env vars and add-ons."
 echo "Pushing code to Heroku now. This will take a few minutes..."

@@ -3,12 +3,12 @@
 # https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 # https://github.com/bbatsov/rubocop/blob/master/config/enabled.yml
 # https://github.com/bbatsov/rubocop/blob/master/config/disabled.yml
+require: rubocop-rails
 
 AllCops:
   Exclude:
     - 'bin/**/*'
     - 'node_modules/**/*'
-  TargetRailsVersion: 5.2
   TargetRubyVersion: 2.5
   UseCache: true
 
@@ -219,6 +219,7 @@ Style/TrailingCommaInArrayLiteral:
   # If `consistent_comma`, the cop requires a comma after the last item of all
   # non-empty array and hash literals.
   EnforcedStyleForMultiline: comma
+
   SupportedStylesForMultiline:
     - comma
     - consistent_comma
