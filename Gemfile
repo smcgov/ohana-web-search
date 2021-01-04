@@ -1,26 +1,26 @@
 source 'https://rubygems.org'
 
 ruby '2.5.7'
-gem 'actionmailer', '~> 5.2'
-gem 'compass-rails'
+gem 'actionmailer', '~> 5.2', '>= 5.2.4.3'
+gem 'compass-rails', '>= 4.0.0'
 gem 'faraday-http-cache', '~> 2.0'
 gem 'figaro'
-gem 'font-awesome-rails'
+gem 'font-awesome-rails', '>= 4.7.0.5'
 gem 'google-api-client', '~> 0.9'
-gem 'haml-rails'
-gem 'kaminari-actionview', '=1.1.1'
+gem 'haml-rails', '>= 2.0.1'
+gem 'kaminari-actionview', '= 1.1.1'
 gem 'kaminari-core', '=1.1.1'
 gem 'ohanakapa', '~> 1.1.1'
 gem 'puma'
 gem 'rack-rewrite', '~> 1.5.0'
-gem 'railties', '~> 5.2'
+gem 'railties', '~> 5.2', '>= 5.2.4.3'
 gem 'recaptcha'
 gem 'redis-rack-cache', git: 'https://github.com/monfresh/redis-rack-cache.git', branch: 'readthis-compatibility'
-gem 'sass-rails', '~> 5.0.1'
+gem 'sass-rails', '~> 5.0.8'
 gem 'skylight'
 gem 'sprockets', '~> 3.7.1'
 gem 'uglifier'
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 4.2', '>= 4.2.2'
 
 # dev and debugging tools
 group :development do
@@ -40,18 +40,18 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'capybara', '>= 3.33.0'
   gem 'email_spec'
   gem 'haml_lint'
-  gem 'rails-controller-testing'
+  gem 'rails-controller-testing', '>= 1.0.5'
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'simplecov', '=0.17.1', require: false
   gem 'vcr'
-  gem 'webdrivers', '>= 4.1.2'
+  gem 'webdrivers', '>= 4.4.1'
   gem 'webmock', '~> 3.4'
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.1'
+  gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
 end
