@@ -42,10 +42,10 @@ end
 group :test do
   gem 'capybara'
   gem 'email_spec'
-  gem 'haml_lint'
+  gem 'haml_lint', '>= 0.35.0'
   gem 'rails-controller-testing'
-  gem 'rubocop'
-  gem 'rubocop-rails'
+  gem 'rubocop', '>= 0.86.0'
+  gem 'rubocop-rails', '>= 2.6.0'
   gem 'simplecov', '=0.17.1', require: false
   gem 'vcr'
   gem 'webdrivers', '>= 4.1.2'
